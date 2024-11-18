@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+header {
+    background: #111;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#home h1 {
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#home p {
+    font-size: 1.2em;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+#projects ul {
+    list-style: none;
+    padding: 0;
+}
+
+#projects ul li {
+    background: #222;
+    margin: 10px auto;
+    padding: 15px;
+    max-width: 500px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.typing-container {
+    text-align: center;
+    margin-top: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 0.5em;
+    line-height: 1.5rem;
+}
+
+.typing-container h1 {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    position: relative;
+}
+
+.typing-container h1::after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    animation: blink 0.5s step-end infinite;
+}
+
+.typing-container h1.completed::after {
+    content: ''; /* Remove the typing cursor when completed */
+    animation: none;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#contact {
+    text-align: center;
+    margin: 50px auto;
+    color: #fff;
+}
+
+#contact p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#contact i {
+    margin-right: 10px;
+    color: #ff6347; /* Change to any color you like */
+}
+
+

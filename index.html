@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ishaan Gangawane</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="typing-container">
+            <h1 id="line1"></h1>
+            <br>
+            <h1 id="line2"></h1>
+            <br>
+            <h1 id="line3"></h1>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Knowledge Sharing Portal on AWS</li>
+            <li>VAS Portal for ShemarooMe</li>
+            <li>Frontend Enhancements for Digiboxx</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:ishaangangawane421@gmail.com">ishaangangawane421@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:8879402152">8879402152</a> / <a href="tel:8928293511">8928293511</a></p>
+        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/ishaan-gangawane-716218283/" target="_blank">Ishaan Gangawane</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Ishaan Gangawane</p>
+    </footer>
+    <script>
+        const lines = [
+            "Hello, Myself Ishaan Gangawane.",
+            "I am a Frontend Developer | Angular Enthusiast.",
+            "Welcome to my portfolio! Explore my work and get in touch."
+        ];
+    
+        const typingSpeeds = {
+            typing: 100,  // Speed of typing each character
+            pause: 1500,  // Pause after completing a line
+        };
+    
+        const lineElements = [
+            document.getElementById("line1"),
+            document.getElementById("line2"),
+            document.getElementById("line3"),
+        ];
+    
+        let currentLineIndex = 0;
+        let charIndex = 0;
+    
+        function typeLine() {
+            const lineElement = lineElements[currentLineIndex];
+            const currentLine = lines[currentLineIndex];
+    
+            if (charIndex < currentLine.length) {
+                lineElement.textContent += currentLine.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeLine, typingSpeeds.typing);
+            } else {
+                // Mark the line as completed to remove the typing cursor
+                lineElement.classList.add("completed");
+    
+                if (currentLineIndex < lines.length - 1) {
+                    currentLineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeLine, typingSpeeds.pause);
+                }
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            typeLine();
+        });
+    </script>
+    
+    
+    
+    
+</body>
+</html>
